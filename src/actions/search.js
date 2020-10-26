@@ -21,7 +21,7 @@ export const searchProduct = ({
     const body = JSON.stringify({ latitude, longitude, product, });
     try {
       console.log(latitude, longitude, product)
-      const res = await axios.post("/api/business/search-data", body, config);
+      const res = await axios.post("https://localplugs-server.herokuapp.com/api/business/search-data", body, config);
       dispatch({ type: SET_PRODUCT, payload: res.data });
       console.log(res.data);
       dispatch(setAlert("Product searched successfully", "success", 5000));
